@@ -1,5 +1,16 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <style type="text/css">
+     span {
+      color: blue;
+      cursor: pointer;
+     }
+    </style>
+
+
+  </head>
+
   <body>
     <!-- Scripts may be placed anywhere on a page. But FYI, they block rendering of elements
      below them until after the scripts load-->
@@ -24,8 +35,10 @@
       $(function(){
         // set up model objects
         var library = new Songs(songData);
+        console.log(library);
 
         var app = new AppModel({library: library});
+        console.log(app.attributes);
 
         // build a view for the top level of the whole app
         var appView = new AppView({model: app});
