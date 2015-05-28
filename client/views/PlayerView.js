@@ -22,11 +22,4 @@ var PlayerView = Backbone.View.extend({
       this.model.nextSong();
     }
   },
-
-  // nextSong: function() {
-  //   console.log("Song Ended");
-  //   this.trigger('nextSong');
-  // }
-
-
 });

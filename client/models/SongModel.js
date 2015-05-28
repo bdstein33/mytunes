@@ -2,16 +2,20 @@
 var SongModel = Backbone.Model.extend({
 
   defaults: {
-    playCount: 0
+    playCount: 0,
+    activeSong: false,
+    src: ""
   },
 
   play: function(){
     this.trigger('play', this);
     this.set('playCount', this.get('playCount')+1);
+    this.set('activeSong', true);
   },
 
   nextSong: function(){
     this.trigger('nextSong', this);
+    this.set('activeSong', false);
   },
 
   enqueue: function(){
@@ -21,9 +25,5 @@ var SongModel = Backbone.Model.extend({
   dequeue: function(){
     this.trigger('dequeue', this);
   },
-
-  ended: function(){
-    this.trigger('ended', this);
-  }
 
 });

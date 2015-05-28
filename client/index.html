@@ -6,6 +6,9 @@
       color: blue;
       cursor: pointer;
      }
+     .active {
+      background-color: yellow;
+     }
     </style>
 
 
@@ -13,14 +16,17 @@
 
   <body>
     <script id="library-template" type="text/x-handlebars-template">
-        <td> {{artist}} </td>
-        <td> {{title}} | Play Count: {{playCount}} |
-        <span class="play">PLAY</span> |
-        <span class="enqueue">ADD TO QUEUE</span>
-        </td>
+
+      <td {{# if activeSong}}class="active"{{/if}}> {{artist}} |
+      {{title}} | Play Count: {{playCount}} | Active: {{activeSong}} |
+      <span class="play">PLAY</span> |
+      <span class="enqueue">ADD TO QUEUE</span>
+
+      </td>
+
     </script>
     <script id="songqueue-template" type="text/x-handlebars-template">
-      <td> {{artist}} </td>
+      <td> {{artist}} |
       <td> {{title}} |
       <span class="dequeue">REMOVE FROM QUEUE</span>
       </td>
