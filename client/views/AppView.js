@@ -25,8 +25,4 @@ var AppView = Backbone.View.extend({
     'nextSong' : 'nextSong'
   },
 
-  nextSong: function(){
-    console.log("AAAAAA");
-  }
-
 });
