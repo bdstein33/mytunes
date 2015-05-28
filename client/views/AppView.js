@@ -19,6 +19,14 @@ var AppView = Backbone.View.extend({
       this.libraryView.$el,
       this.songQueueView.$el
     ]);
+  },
+
+  events: {
+    'nextSong' : 'nextSong'
+  },
+
+  nextSong: function(){
+    console.log("AAAAAA");
   }
 
 });

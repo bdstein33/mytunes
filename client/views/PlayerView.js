@@ -18,12 +18,15 @@ var PlayerView = Backbone.View.extend({
   },
 
   events: {
-    'ended' : 'nextSong'
+    'ended' : function() {
+      this.model.unplay();
+    }
   },
 
-  nextSong: function() {
-    this.trigger('nextSong, this');
-  }
+  // nextSong: function() {
+  //   console.log("Song Ended");
+  //   this.trigger('nextSong');
+  // }
 
 
 });
