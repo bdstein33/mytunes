@@ -3,18 +3,6 @@ var SongQueue = Songs.extend({
 
   model: SongModel,
 
-  queue: [],
-
-  add: function(song) {
-    // if (this.queue.length === 0){
-    //   song.play();
-    // }
-    this.queue.push(song);
-  },
-
-  remove: function() {
-
-  },
 
   playFirst: function() {
     this.trigger('play', this);
@@ -22,6 +10,9 @@ var SongQueue = Songs.extend({
 
 
   initialize: function(){
+    this.on('add', function(song){
+      console.log(this);
+    }, this);
   }
 
 });

@@ -41,7 +41,6 @@
         var queue = new SongQueue();
 
         var app = new AppModel({library: library, queue: queue});
-        console.log(app.attributes);
 
         // build a view for the top level of the whole app
         var appView = new AppView({model: app});
